@@ -6,7 +6,7 @@ public class Casino
    static int getBet(){
       int bet = -1;
       Scanner input = new Scanner(System.in);
-  
+      //comment
       while(bet < 0 || bet > 100){
          System.out.print("How much would you like to bet (1-100) or 0 to quit: ");
          bet = input.nextInt();
@@ -14,6 +14,10 @@ public class Casino
       return bet;
    }
    
+   //generates random string based on probabilities
+   //50% chance of Bar
+   //25% chance of cherries
+   //12.5% chance each for 7 and space
    private static String randString(){
       double randBet = Math.random();
       System.out.println(randBet);
