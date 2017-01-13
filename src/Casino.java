@@ -6,7 +6,7 @@ public class Casino
    static int getBet(){
       int bet = -1;
       Scanner input = new Scanner(System.in);
-      //comment
+  
       while(bet < 0 || bet > 100){
          System.out.print("How much would you like to bet (1-100) or 0 to quit: ");
          bet = input.nextInt();
@@ -27,8 +27,24 @@ public class Casino
          return "cherries";
       else if(randBet >= 0.750 && randBet < 0.875)
          return "7";
-      return "space";
+      return "(space)";
    }
+   
+   public static void display(TripleString thePull, int winnings)
+   {
+      System.out.println("Whirr...and your pull is ...");
+      System.out.println(thePull.toString());
+      if(winnings > 0)
+         System.out.println("Congratulations, you win " + winnings);
+      else
+         System.out.println("Sorry, you lose.");
+   }
+   
+   /* 
+    * Still need to implement
+    * int getPayMultiplier (TripleString thePull)
+    * TripleString pull()
+    */
    
    public static void main(String argsp[]){
       TripleString tsi = new TripleString();
@@ -37,6 +53,8 @@ public class Casino
       tsi.setString3("Goodness");
       System.out.println(randString());
    }
+   
+ 
 }
 
 class TripleString
